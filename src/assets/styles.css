@@ -1,3 +1,22 @@
 body {
   margin: 10%;
 }
+h1{
+  margin-bottom: 3%;
+  font-family: copperplate;
+}
+p{
+  font-family: arial;
+}
+div{
+  margin-top: 5%;
+}
+
+.guessSubmit{
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  margin-left: 3%;
+  color: #fff;
+  background-color: #000;
+}
