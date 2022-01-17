@@ -1,31 +1,21 @@
 
-const coursesEn = ["Hamburger, cream sauce and poiled potates",
-    "Goan style fish curry and whole grain rice",
-    "Vegan Chili sin carne and whole grain rice",
-    "Broccoli puree soup, side salad with two napas",
-    "Lunch baguette with BBQ-turkey filling",
-    "Cheese / Chicken / Vege / Halloum burger and french fries"];
-
-const coursesFi = ["Jauhelihapihvi, ruskeaa kermakastiketta ja keitettyä perunaa",
-    "Goalaista kalacurrya ja täysjyväriisiä",
-    "vegaani Chili sin carne ja täysjyväriisi",
-    "Parsakeittoa,lisäkesalaatti kahdella napaksella",
-    "Lunch baguette with BBQ-turkey filling",
-    "Juusto / Kana / Kasvis / Halloumi burgeri ja ranskalaiset"];
+import LunchMenu from './lunch.json';
+// Test
+console.log('lunch menu object', LunchMenu);
 
     const coursesList = document.querySelector('#lunch-courses');
     let activeList;
     let reverse = true;
-const createLunchList = (courses) => {
+const createLunchList = (courses,lang) => {
     coursesList.innerHTML = '';
 
     activeList = courses;
-
-    courses.forEach((course) => {
+    Object.entries(courses).forEach(course => {
+        course = course[1];
         console.log(course);
 
         const div = document.createElement('div');
-        div.innerHTML = course;
+        div.innerHTML = course['title_'+lang];
 
         coursesList.appendChild(div);
 
@@ -34,10 +24,10 @@ const createLunchList = (courses) => {
 };
 
 const buttonFi = document.querySelector('#buttonFi');
-buttonFi.addEventListener('click', () => createLunchList(coursesFi), );
+buttonFi.addEventListener('click', () => createLunchList(LunchMenu.courses,'fi'), );
 
 const buttonEn = document.querySelector('#buttonEn');
-buttonEn.addEventListener('click', () => createLunchList(coursesEn), );
+buttonEn.addEventListener('click', () => createLunchList(coursesEn, 'en'), );
 
 const sort = document.querySelector('#sort');
 sort.addEventListener('click', () => {
