@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Document</title>
 </head>
-<header>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#alaCarte">À la carte</a></li>
-    <li><a href="#lunch">Lunch</a></li>
-    <li><a href="#aboutUs">About Us</a></li>
-  </ul>
-</header>
+
 <body>
-    <input type="button" value="FIN" id="buttonFi">
-    <input type="button" value="EN" id="buttonEn">
-    <input type="button" value="Sort" id="sort">
-    <input type="button" value="Random" id="random">
+  <header>
+    <ul>
+      <li><a href="#etusivu">Etusivu</a></li>
+      <li><a href="#ruoklalista">Ruokalista</a></li>
+      <li><a href="#ravintolat">Ravintolta</a></li>
+      <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+      
+      <input class="search" type="text" placeholder="Search.." name="search">
+    
+  
+    </ul>
+  </header>
+
+ <div class="imgFruits" alt="Orange">
+   <div class="image-gradient"><p class="etuTeksti">Mmm ruokaa...</p>
+   </div>
+ </div>
+
+ <p style="text-align: center; margin-left: 5%; margin-right: 5%; font-family: 'Lato', sans-serif;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eius sequi tenetur aut beatae corporis vero distinctio consectetur </p> 
+ <p style="text-align: center; margin-left: 5%; margin-right: 5%; font-family: 'Lato', sans-serif;"> explicabo quasi consequatur deserunt impedit ullam consequuntur nobis sit quam libero quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p> 
+ <p style="text-align: center; margin-left: 5%; margin-right: 5%; font-family: 'Lato', sans-serif;"> Odit eius sequi tenetur aut beatae corporis vero distinctio consectetur, explicabo quasi consequatur deserunt impedit ullam consequuntur nobis sit quam libero quaerat.</p>
+
+
+ <aside class="lunch-list">
+
+  <div class="ravintola2"> 
+    <div class="lang">
+      <input type="button" value="FIN" id="buttonFi">
+      <input type="button" value="EN" id="buttonEn">
+      <input type="button" value="Sort" id="sort">
+      <input type="button" value="Random" id="random">
+    </div>
+    <h2>Ravintola 2 <img src="./assets/location.svg"  width="50px" alt=""></h2>
+    
     <div id="lunch-courses"></div>
+  </div>
+
+    <div class="ravintola1"> 
+      <h2>Ravintola 1 <img src="./assets/location.svg"  width="50px" alt=""></h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+      <p> Odit, amet a eum dolorum sunt ipsum quibusdam tenetur molestias
+         pariatur omnis cupiditate nemo ratione distinctio iste reiciendis 
+         repellendus veniam maiores dolor.</p>
+    </div>
+
+ </aside>
 </body>
+
 </html>

@@ -1,13 +1,115 @@
 
+:root{
+  --green: #43E04f;
+  --red: #940E3F;
+  --dGrey: #343A40;
+  --wGrey: #9BADBF;
+}
+
 body{
   margin: 0;
 }
 ul {
-  display: flex; 
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px 700px;
   list-style-type: none;
   margin: 0;
-  padding: 3%;
-  margin-bottom: 5%;
-  background-color: aqua;
+  padding: 2%;
+  background-color: #000;
+  border-bottom: 3px solid #940e3f;
+}
+li{
+  font-size: 23px;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Roboto Slab', serif;
+  font-size: 27px;
+}
+.search{
+  justify-self: end;
+  height: 2.5em;
+  width: 20em;
+  background-image: url("../assets/search.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.imgFruits{
+  width: 100%;
+  background-image: url('../assets/orange2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  margin-bottom: 3%;
+}
+.image-gradient{
+  background: linear-gradient(60deg, #940e3fc4 40%, transparent 60%);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.etuTeksti{
+  display: flex;
+  text-align: center;
+  margin: 0%;
+  margin-right: 40%;
+  color: #fff;
+  font-size: 40px;
+}
+.lang{
+  display: flex;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: 1/2;
+}
+
+.lang > input{
+  margin: 1%;
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  background-color: var(--dGrey);
+  border: none;
+  font-family: PT Sans;
+}
+#lunch-courses{
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  color: #000;
+}
+.lunch-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  width: 90%;
+  grid-auto-rows: minmax(200px, 1fr);
+  column-gap: 5%;
+  margin-top: 5%;
+
+}
+.lunch-list > div{
+  border: 3px solid #000;
+  padding-left: 2%;
+  padding: 2%;
+}
+.ravintola2{
+  grid-column: 2;
+  grid-row: 1/1;
+  text-align: center;
+  background-color: var(--wGrey);
+  
+}
+.ravintola1{
+  grid-column: 1;
+  grid-row: 1/1;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--wGrey);
+}
+h2{
+  font-family: 'Lato', sans-serif;
 }
