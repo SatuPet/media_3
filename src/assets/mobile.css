@@ -1,0 +1,41 @@
+
+:root{
+    --green: #43E04f;
+    --red: #940E3F;
+    --dGrey: #343A40;
+    --wGrey: #9BADBF;
+  }
+  
+  body{
+    margin: 0;
+  }
+  label {
+    display: block;
+    cursor: pointer;
+}
+.ul {
+    position: relative;
+    top: 22px;
+    background-color: burlywood;
+    /* Mobiilikoossa piilossa ellei checkboxia klikata */
+    display: none;
+}
+.ul a {
+    display: block;
+}
+
+#toggleCheck:checked + .ul {
+    display: block;
+}
+  /* ul {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 700px;
+    list-style-type: none;
+    margin: 0;
+    padding: 2%;
+    background-color: #000;
+    border-bottom: 3px solid #940e3f;
+  } */
+  li{
+    font-size: 23px;
+  }

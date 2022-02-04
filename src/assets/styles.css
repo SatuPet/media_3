@@ -6,27 +6,48 @@
   --wGrey: #9BADBF;
 }
 
-body{
+html, body {
+  width: 100%;
+  height: 100%;
   margin: 0;
+  box-sizing: border-box;
+  font-size: 30px;
 }
-ul {
-  display: grid;
-  grid-template-columns: 150px 150px 150px 150px 700px;
-  list-style-type: none;
-  margin: 0;
-  padding: 2%;
+nav {
   background-color: #000;
   border-bottom: 3px solid #940e3f;
+  width: 100%;
+  padding: 2%;
+  position: fixed;
+  top: 0;
 }
-li{
-  font-size: 23px;
+.icon{
+  width: 50px;
+}
+.menu{
+  display: grid;
+  grid-template-columns: auto auto auto auto 2fr;
+  width: 99vw;
 }
 a{
-  color: #fff;
-  text-decoration: none;
   font-family: 'Roboto Slab', serif;
-  font-size: 27px;
 }
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+  line-height: 50px;
+}
+label {
+  width: 40px;
+  line-height: 50px;
+  display: none;
+}
+#check {
+  display: none;
+}
+
 .search{
   justify-self: end;
   height: 2.5em;
@@ -34,6 +55,11 @@ a{
   background-image: url("../assets/search.svg");
   background-repeat: no-repeat;
   background-position: right;
+  margin-right: 13%;
+}
+
+.etusivu:hover, .ruokalista:hover, .ravintolat:hover, .yhteystiedot:hover{
+  border-bottom: 1px solid var(--red);
 }
 
 .imgFruits{
@@ -44,6 +70,7 @@ a{
   background-size: cover;
   height: 40vh;
   margin-bottom: 3%;
+  margin-top: 7%;
 }
 .image-gradient{
   background: linear-gradient(60deg, #940e3fc4 40%, transparent 60%);
@@ -75,6 +102,13 @@ a{
   background-color: var(--dGrey);
   border: none;
   font-family: PT Sans;
+  cursor: pointer;
+}
+.locationSVG{
+  cursor: pointer;
+}
+.locationSVG:hover{
+  filter: invert(73%) sepia(94%) saturate(504%) hue-rotate(61deg) brightness(98%) contrast(79%);
 }
 #lunch-courses{
   align-items: center;
@@ -92,7 +126,7 @@ a{
 
 }
 .lunch-list > div{
-  border: 3px solid #000;
+  border: 3px solid var(--wGrey);
   padding-left: 2%;
   padding: 2%;
 }
@@ -100,16 +134,65 @@ a{
   grid-column: 2;
   grid-row: 1/1;
   text-align: center;
-  background-color: var(--wGrey);
-  
+  box-shadow: 20px 20px 50px grey;
+  margin-bottom: 5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
 }
 .ravintola1{
   grid-column: 1;
   grid-row: 1/1;
   text-align: center;
   font-family: 'Lato', sans-serif;
-  background-color: var(--wGrey);
+  box-shadow: 20px 20px 50px grey;
+  margin-bottom: 5rem;
+  font-size: 24px;
 }
 h2{
   font-family: 'Lato', sans-serif;
+  font-size: 40px;
 }
+
+@media screen and (max-width: 1000px) {
+  label {
+      display: block;
+      cursor: pointer;
+  }
+  .menu {
+      position: relative;
+      right: 20%;
+      background-color: black;
+      display: none;
+  }
+  .menu a {
+      display: block;
+  }
+
+  #check:checked + .menu {
+      display: block;
+  }
+
+  nav{
+    padding: 0%;
+    display: grid;
+    grid-template-columns: auto 70%;
+  }
+
+  .menu-search{
+    display: none;
+  }
+  .icon{
+    width: 70px;
+    margin-top: 20%;
+  }
+  .search{
+    justify-content: end;
+  }
+  .lunch-list{
+    display: inherit;
+  }
+  .ravintola2{
+    margin-bottom: 5%;
+  }
+}
+
