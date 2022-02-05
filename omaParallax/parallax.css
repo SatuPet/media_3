@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    
+}
+
+#omaParallax{
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.layer{
+    width: 100%;
+    height: 800px;
+    background-size: auto;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    position: fixed;
+
+}
+
+.bg{
+    background-image: url(BG.png);
+    overflow: hidden;
+}
+.leftSide{
+    background-image: url(side1.png);
+    overflow: hidden;
+}
+.rightSide{
+    background-image: url(side2.png);
+    overflow: hidden;
+    width: 130%;
+    left: -23%;
+}
+main{
+    color: white;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+    background-color: black;
+}
+
+#walleBg{
+    width: 100%;
+    height: calc(100vh - 30px);
+    background-image: url(walle_E-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.wallE{
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat ;
+    z-index: 5;
+    top: 10%;
+    left: 20%;
+    width: 1066px;
+    height: 900px;
+    background-image: url(wallee.png);
+}
+
+ .mouse, .mouse-center{
+    color: white;
+    /* border: 1px solid #fff; */
+    width: 230px;
+    height: 128px;
+    left: 5%;
+    font-size: 25px;
+} 
+.mouse{
+    top: 40px;
+    position: absolute;
+  z-index: 4;
+  
+}
+.mouse-center{
+    top: 190px;
+    /* right: 20px; */
+    position: absolute;
+    z-index: 4;
+    line-height: 1.25;
+}
