@@ -1,4 +1,5 @@
 import SodexoLunchMenu from './sodexo-data.json';
+import urlFetch from './network-module';
 
 // console.log(sodexoLunchMenu);
 
@@ -15,8 +16,5 @@ const parseSodexoMenu = (menu) => {
 
 };
 
-parseSodexoMenu(SodexoLunchMenu.courses);
-
-
-const SodexoData = {coursesEn, coursesFi}; 
+const SodexoData = {coursesEn, coursesFi ,parseSodexoMenu}; 
 export default SodexoData;

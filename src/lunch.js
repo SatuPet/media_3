@@ -1,7 +1,7 @@
 
 import FazerData from './modules/fazer-data';
 import SodexoData from './modules/sodexo-data';
-
+import urlFetch from './modules/network-module';
 
 
 let coursesArray = [];
@@ -58,18 +58,23 @@ random.addEventListener('click', () => createLunchList(activeList.sort((a, b) =>
  */
 const init = () => {
 
+    urlFetch('https://www.sodexo.fi/ruokalistat/output/daily_json/152/2022-02-08').then(data => {
+        console.log(data);
+        SodexoData.parseSodexoMenu(data.courses);
+        createLunchList(SodexoData.coursesFi, sodexoCoursesList);
+    });
     createLunchList(FazerData.coursesFi, fazerCoursesList);
-    createLunchList(SodexoData.coursesFi, sodexoCoursesList);
+
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./service-worker.js').then(registration => {
-            console.log('SW registered: ', registration);
-          }).catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-          });
+            navigator.serviceWorker.register('./service-worker.js').then(registration => {
+                console.log('SW registered: ', registration);
+            }).catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+            });
         });
-      }
+    }
 };
 init();
 
