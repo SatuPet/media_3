@@ -31,6 +31,25 @@ const createLunchList = (courses, listElement) => {
 
 };
 
+const darkModeToggleButton = document.querySelector('#dark-mode-button');
+let darkModeStyleSheet;
+const changeDarkMode = () => {
+    const darkModeSetting = localStorage.getItem('darkModeSetting');
+    if (darkModeSetting == null) {
+        localStorage.setItem('darkModeSetting', false);
+    } else {
+        
+        let cssFile = document.createElement('link');
+        cssFile.rel = 'stylesheet';
+        cssFile.href = "styles.css";  
+        document.head.appendChild(cssFile);
+    }
+
+};
+
+darkModeToggleButton.addEventListener('click', changeDarkMode);
+
+
 const buttonFi = document.querySelector('#buttonFi');
 buttonFi.addEventListener('click', () => {
     createLunchList(FazerData.coursesFi, fazerCoursesList);

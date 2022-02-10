@@ -27,7 +27,7 @@ nav {
 .menu{
   display: grid;
   grid-template-columns: auto auto auto auto 2fr;
-  width: 99vw;
+  width: 96vw;
 }
 a{
   font-family: 'Roboto Slab', serif;
