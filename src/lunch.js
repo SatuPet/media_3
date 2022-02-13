@@ -33,21 +33,57 @@ const createLunchList = (courses, listElement) => {
 
 const darkModeToggleButton = document.querySelector('#dark-mode-button');
 let darkModeStyleSheet;
+
 const changeDarkMode = () => {
     const darkModeSetting = localStorage.getItem('darkModeSetting');
-    if (darkModeSetting == null) {
-        localStorage.setItem('darkModeSetting', false);
+    if (darkModeSetting === null) {
+        localStorage.setItem('darkModeSetting', 'whitemode');
     } else {
         
-        let cssFile = document.createElement('link');
-        cssFile.rel = 'stylesheet';
-        cssFile.href = "styles.css";  
-        document.head.appendChild(cssFile);
+        if (darkModeSetting == 'whitemode') {
+            // Creating the darkmode css style sheet and adding it to DOM
+            darkModeStyleSheet = document.createElement('link');
+            darkModeStyleSheet.rel = 'stylesheet';
+            darkModeStyleSheet.href = "assets/darkmode.css";
+            document.head.appendChild(darkModeStyleSheet);
+
+            // Saving preference to storage
+            localStorage.setItem('darkModeSetting', 'darkmode');
+        }
+        else {
+            if (darkModeStyleSheet != undefined) {
+                console.log(darkModeStyleSheet);
+                darkModeStyleSheet.remove();
+            }
+
+            // Saving preference to storage
+            localStorage.setItem('darkModeSetting', 'whitemode');
+        }
+
     }
 
 };
 
-darkModeToggleButton.addEventListener('click', changeDarkMode);
+darkModeToggleButton.addEventListener('click',changeDarkMode);
+
+
+const setTheme = () => {
+    const darkModeSetting = localStorage.getItem('darkModeSetting');
+    if (darkModeSetting === null) {
+        localStorage.setItem('darkModeSetting', 'whitemode');
+    } else {
+        
+        if (darkModeSetting == 'darkmode') {
+            // Creating the darkmode css style sheet and adding it to DOM
+            darkModeStyleSheet = document.createElement('link');
+            darkModeStyleSheet.rel = 'stylesheet';
+            darkModeStyleSheet.href = "assets/darkmode.css";
+            document.head.appendChild(darkModeStyleSheet);
+        }
+
+    }
+};
+
 
 
 const buttonFi = document.querySelector('#buttonFi');
@@ -83,7 +119,7 @@ const init = () => {
         createLunchList(SodexoData.coursesFi, sodexoCoursesList);
     });
     createLunchList(FazerData.coursesFi, fazerCoursesList);
-
+    setTheme();
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

@@ -26,7 +26,7 @@ nav {
 }
 .menu{
   display: grid;
-  grid-template-columns: auto auto auto auto 2fr;
+  grid-template-columns: auto auto auto auto 2fr auto;
   width: 96vw;
 }
 a{
@@ -56,6 +56,15 @@ label {
   background-repeat: no-repeat;
   background-position: right;
   margin-right: 13%;
+}
+#dark-mode-button{
+  cursor: pointer;
+  background-color: var(--dGrey);
+  color: #fff;
+  border: 0px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
 }
 
 .etusivu:hover, .ruokalista:hover, .ravintolat:hover, .yhteystiedot:hover{
@@ -195,4 +204,5 @@ h2{
     margin-bottom: 5%;
   }
 }
+
 

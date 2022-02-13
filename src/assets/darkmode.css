@@ -1,3 +1,21 @@
+
+:root{
+    --green: #43E04f;
+    --red: #940E3F;
+    --dGrey: #343A40;
+    --wGrey: #9BADBF;
+  }
+
 body{
-    background: black !important;
+    background: black;
+}
+p{
+    color: #fff;
+}
+.lunch-list{
+    color: var(--wGrey);
+}
+.locationSVG{
+    /* filter: invert(99%) sepia(100%) saturate(2%) hue-rotate(62deg) brightness(106%) contrast(101%); */
+    filter: invert(23%) sepia(2%) saturate(2550%) hue-rotate(169deg) brightness(91%) contrast(94%);
 }
